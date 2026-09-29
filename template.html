@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boddireddy Logistics | Global Freight & Supply Chain Solutions</title>
+  <style>
+    /* CSS Reset & Variables */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    :root {
+      --primary-color: #0f2c59;
+      --secondary-color: #ff6b00;
+      --light-bg: #f8f9fa;
+      --dark-text: #1c1c1c;
+      --gray-border: #e0e0e0;
+    }
+
+    body {
+      color: var(--dark-text);
+      line-height: 1.6;
+    }
+
+    /* Navigation Bar */
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+    .logo span {
+      color: var(--secondary-color);
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark-text);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--secondary-color);
+    }
+    .btn-quote-nav {
+      background-color: var(--secondary-color);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 4px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(15, 44, 89, 0.85), rgba(15, 44, 89, 0.85)), 
+                  url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: #ffffff;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    /* Tracking Search Box */
+    .tracking-card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+    }
+    .tracking-card input {
+      flex: 1;
+      padding: 12px 15px;
+      border: 1px solid var(--gray-border);
+      border-radius: 4px;
+      font-size: 15px;
+    }
+    .tracking-card button {
+      background-color: var(--secondary-color);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 80px 20px;
+      background-color: var(--light-bg);
+      text-align: center;
+    }
+    .section-title {
+      font-size: 32px;
+      color: var(--primary-color);
+      margin-bottom: 40px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 6px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-top: 4px solid var(--primary-color);
+    }
+    .service-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    /* Quote Request Form Section */
+    .quote-section {
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .quote-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      background: var(--light-bg);
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid var(--gray-border);
+    }
+    .quote-form input, .quote-form select, .quote-form textarea {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid var(--gray-border);
+      border-radius: 4px;
+    }
+    .full-width {
+      grid-column: span 2;
+    }
+    .btn-submit {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 40px 20px 20px;
+      text-align: center;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+    .footer-section h4 {
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+    }
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      font-size: 14px;
+      color: #cccccc;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar { flex-direction: column; gap: 15px; }
+      .tracking-card { flex-direction: column; }
+      .quote-form { grid-template-columns: 1fr; }
+      .full-width { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">SwiftMove <span>Logistics</span></div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#tracking">Tracking</a></li>
+        <li><a href="#quote" class="btn-quote-nav">Get a Quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Live Tracking Box -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Reliable Freight & Supply Chain Solutions</h1>
+      <p>Fast ocean, air, and overland transportation tailored to your business needs.</p>
+      
+      <!-- Tracking Search Box -->
+      <div class="tracking-card" id="tracking">
+        <input type="text" id="trackingInput" placeholder="Enter Tracking / Waybill Number...">
+        <button onclick="trackShipment()">Track Shipment</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Air Freight</h3>
+        <p>Express international air transportation for urgent, high-priority cargo requiring fast delivery schedules.</p>
+      </div>
+      <div class="service-card">
+        <h3>Ocean Freight</h3>
+        <p>Cost-effective Full Container Load (FCL) and Less than Container Load (LCL) shipping across major international ports.</p>
+      </div>
+      <div class="service-card">
+        <h3>Overland Trucking</h3>
+        <p>Regional door-to-door ground logistics utilizing temperature-controlled, secure fleet transport.</p>
+      </div>
+      <div class="service-card">
+        <h3>Warehousing & Distribution</h3>
+        <p>Secure storage facilities with real-time inventory management, order picking, and fulfillment services.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Request a Quote Section -->
+  <section class="quote-section" id="quote">
+    <h2 class="section-title" style="text-align: center;">Request a Freight Quote</h2>
+    <form class="quote-form" onsubmit="event.preventDefault(); alert('Quote Request Submitted Successfully!');">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="Origin City / Country" required>
+      <input type="text" placeholder="Destination City / Country" required>
+      <select required>
+        <option value="">Select Transport Mode</option>
+        <option value="air">Air Freight</option>
+        <option value="ocean">Ocean Freight</option>
+        <option value="road">Road Trucking</option>
+      </select>
+      <input type="text" placeholder="Estimated Weight (kg)">
+      <textarea rows="4" class="full-width" placeholder="Additional Cargo Details (Dimensions, Goods Type, etc.)"></textarea>
+      <button type="submit" class="btn-submit full-width">Submit Quote Request</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Boddireddy Logistics</h4>
+        <p>Connecting businesses worldwide through efficient, transparent, and technology-driven supply chain management.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>Email: support@swiftmovelogistics.com</p>
+        <p>Phone: +1 (800) 555-0199</p>
+        <p>Headquarters: Hyderabad, India</p>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 SwiftMove Logistics. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Basic JavaScript for Tracking Input -->
+  <script>
+    function trackShipment() {
+      const trackingNo = document.getElementById('trackingInput').value.trim();
+      if (trackingNo === "") {
+        alert("Please enter a valid tracking number.");
+      } else {
+        alert("Tracking Number " + trackingNo + ": Shipment is currently in transit to destination warehouse.");
+      }
+    }
+  </script>
+
+</body>
+</html>
